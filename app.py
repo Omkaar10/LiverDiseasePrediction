@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request,jsonify
 import pickle
 import gunicorn
-import requests
 import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
