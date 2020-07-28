@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> ML Flask Application </title>
 </head>
 <body>
     <div style="color:blue">
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>Predictive Analysis</h2>
+            <h2>Predictive Analysis for Liver Disease</h2>
 
             <h3>Age</h3>
-            <input id="first" name="Age" type="number" required="required">
+            <input id="first" name="Age" type="number" placeholder="1" min="1" max="100" required="required">
 
             <h3>Gender</h3><br><select name="Gender" id="second" required="required">
                 <option value="Male">Male</option>
@@ -18,22 +18,22 @@
             </select>
 
             <h3>Total Bilirubin</h3>
-            <input id="third" name="Total_Bilirubin" type="number" required="required">
+            <input id="third" name="Total_Bilirubin" type="number" placeholder="0.0" step="0.01" min="0" required="required">
 
 
             <h3>Alkaline Phosphotase</h3>
-            <input id="fourth" name="Alkaline_Phosphotase" type="number" required="required">
+            <input id="fourth" name="Alkaline_Phosphotase" type="number" placeholder="0.0" step="0.01" min="0" required="required">
 
             <h3>Alamine Aminotransferase</h3>
-            <input id="fifth" name="Alamine_Aminotransferase" type="number" required="required">
+            <input id="fifth" name="Alamine_Aminotransferase" type="number" placeholder="0.0" step="0.01" min="0" required="required">
 
 
             <h3>Total Protiens</h3>
-            <input id="sixth" name="Total_Protiens" type="number" required="required">
+            <input id="sixth" name="Total_Protiens" type="number" placeholder="0.0" step="0.01" min="0" required="required">
 
 
             <h3>Albumin and Globulin Ratio</h3>
-            <input id="seventh" name="Albumin_and_Globulin_Ratio" type="number",required="required">
+            <input id="seventh" name="Albumin_and_Globulin_Ratio" placeholder="0.0" step="0.01" min="0" type="number",required="required">
 
             <br><br><button id="sub" type="submit ">Calculate the Disease Prediction</button>
             <br>
@@ -48,13 +48,6 @@
             background-color: lightslategray;
             text-align: center;
             padding: 0px;
-        }
-
-        #research {
-            font-size: 18px;
-            width: 100px;
-            height: 23px;
-            top: 23px;
         }
 
         #box {
@@ -73,54 +66,6 @@
             padding: 0px;
             margin: 0px;
             font-size: 14px;
-        }
-
-        #fuel {
-            width: 83px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 20px;
-        }
-
-        #fuel:hover {
-            background-color: coral;
-        }
-
-        #research {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-
-        #research:hover {
-            background-color: coral;
-        }
-
-        #resea {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-
-        #resea:hover {
-            background-color: coral;
-        }
-
-        #sub {
-            width: 120px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-
-        #sub:hover {
-            background-color: darkcyan;
         }
 
         #first {
@@ -145,6 +90,27 @@
         }
 
         #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #sixth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #seventh {
             border-radius: 14px;
             height: 25px;
             font-size: 20px;
