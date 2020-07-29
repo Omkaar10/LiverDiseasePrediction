@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./index-style.css">
+    </head>
+    <body>
+        <div class="container custom-container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <form>
+                            <div class="panel-heading">
+                                <h2>Liver Disease Prediction</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-6">
+                                    <img id="img1"
+										src="https://img.collegedekhocdn.com/media/img/careers/doctor-clinic.jpg">
+										
+                                        
+                                    <img id="img2"
+										src="https://www.topdoctors.co.uk/files/Image/large/5a057f75-278c-449a-9032-4fd825bbab96.jpg">
+										
+                                        
+                                </div>
+                                <div class="form-row col-md-6">
+                                    <div class="form-row">
+                                        <div class="col-md-6 d-flex">
+                                            <div class="form-group d-flex">
+                                                <label for="age" class="mr-2 required">Age</label>
+                                                <input required type="number" id="age" class="form-control"
+                                                    placeholder="Enter Age">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex">
+                                            <div class="form-group flex-auto d-flex">
+                                                <label for="gender" class="mr-2 no-whitespace">Gender (select one):</label>
+                                                <select class="form-control" id="gender">
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 d-flex">
+                                            <div class="form-group d-flex">
+                                                <label for="age" class="mr-2 required">Total Bilirubin</label>
+                                                <input required type="number" id="age" class="form-control"
+                                                    placeholder="Enter Value">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex">
+                                            <div class="form-group d-flex">
+                                                <label for="age" class="mr-2 required">Alkaline Phosphotase</label>
+                                                <input required type="number" id="age" class="form-control"
+                                                    placeholder="Enter Value   ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 d-flex">
+                                            <div class="form-group d-flex">
+                                                <label for="age" class="mr-2 required">Alamine Aminotransferase</label>
+                                                <input required type="number" id="age" class="form-control"
+                                                    placeholder="Enter Value">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex">
+                                            <div class="form-group d-flex">
+                                                <label for="age" class="mr-2 required">Total Proteins</label>
+                                                <input required type="number" id="age" class="form-control"
+                                                    placeholder="Enter Value">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 d-flex">
+                                            <div class="form-group d-flex">
+                                                <label for="age" class="mr-2 required">Albumin and Globullin Ratio</label>
+                                                <input required type="text" id="age" class="form-control"
+                                                    placeholder="Enter Value">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-success pull-right">Predict</button>
+                                </div>
+                            </div>
+							
+							<h3>{{ prediction_text }}<h3>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
