@@ -15,6 +15,7 @@ def home():
 
 
 standard_to=StandardScaler()
+
 @app.route('/predict',methods=['POST'])
 
 def predict():
@@ -40,22 +41,23 @@ def predict():
 
         #Aspartate_Aminotransferase = float(request.form(['Aspartate_Aminotransferase']))
 
-        Total_Protiens = float(request.form['Total_Protiens'])
+        Total_Proteins = float(request.form['Total_Proteins'])
 
         #Albumin = float(request.form(['Albumin']))
 
         Albumin_and_Globulin_Ratio = float(request.form['Albumin_and_Globulin_Ratio'])
 
 
-        prediction=model.predict([[Age,Total_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Total_Protiens,Albumin_and_Globulin_Ratio,Gender_Female,Gender_Male]])
+        prediction=model.predict([[Age,Total_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Total_Proteins,Albumin_and_Globulin_Ratio,Gender_Female,Gender_Male]])
         output=round(prediction[0],2)
+
         if output==0:
             return render_template('index.html',prediction_text='You dont have Liver Disease')
         else:
             return render_template('index.html', prediction_text='You have Liver Disease')
 
     else:
-        return render_template('index.html')
+        return render_template('index.html',test='Something went wrong')
 
 if __name__=='__main__':
     app.run(debug=True)
