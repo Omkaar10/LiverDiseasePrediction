@@ -6,7 +6,7 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 
 app=Flask(__name__)
-model=pickle.load(open('liver_forest_classification.pkl','rb'))
+model=pickle.load(open('liver_classification.pkl','rb'))
 
 @app.route('/')
 
@@ -14,7 +14,7 @@ def home():
     return render_template('index.html')
 
 
-standard_to=StandardScaler()
+scaling=StandardScaler()
 
 @app.route('/predict',methods=['POST'])
 
@@ -24,11 +24,9 @@ def predict():
 
         Gender = (request.form['Gender'])
         if (Gender=='Male'):
-            Gender_Male=1
-            Gender_Female=0
+            Gender=0
         else:
-            Gender_Female=1
-            Gender_Male = 0
+            Gender=1
 
         Total_Bilirubin = float(request.form['Total_Bilirubin'])
 
@@ -47,8 +45,8 @@ def predict():
 
         Albumin_and_Globulin_Ratio = float(request.form['Albumin_and_Globulin_Ratio'])
 
-
-        prediction=model.predict([[Age,Total_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Total_Proteins,Albumin_and_Globulin_Ratio,Gender_Female,Gender_Male]])
+        scaled_input=scaling.fit_transform([[Age,Gender,Total_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Total_Proteins,Albumin_and_Globulin_Ratio]])
+        prediction=model.predict(scaled_input)
         output=round(prediction[0],2)
 
         if output==0:
