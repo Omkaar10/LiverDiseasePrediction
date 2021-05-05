@@ -1,4 +1,6 @@
 from flask import Flask,render_template,request,jsonify
+import os
+from wsgiref import simple_server
 import pickle
 import gunicorn
 import numpy as np
@@ -57,5 +59,20 @@ def predict():
     else:
         return render_template('index.html',test='Something went wrong')
 
+###############Files needed for deployment###############
+##procfile
+##manifest.yml
+##runtime.txt
+##########################################################
+
+
+#port=int(os.getenv("PORT"))
 if __name__=='__main__':
+    ###############Below line are used to remove flask warning of wsgi##################
+    #host='0.0.0.0'
+    #app.run(debug=True,port=port)
+    #httpd=simple_server.make_server(host,port,app)
+    #httpd.serve_forever
+    ######################################
     app.run(debug=True)
+

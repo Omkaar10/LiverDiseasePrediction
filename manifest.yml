@@ -1,0 +1,9 @@
+---
+applications:
+- name: End-to-End
+  memory:512MB
+  disk_quota:512MB
+  random_route:true
+  parameters:
+    memory:512MB
+    buildpack: 'python_buildpack'
